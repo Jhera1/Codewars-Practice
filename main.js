@@ -42,10 +42,13 @@
 // console.log(decode('pumy', 'um'));  
 // // Expected output: ['pumy']
 
-function position(letter) {
-    const alphabet = "abcdefghijklmnopqrstuvwxyz";
-    return "position of letter is: " + (alphabet.indexOf(letter) + 1);
-}
- console.log(position("b"));
+// function position(letter) {
+//     const alphabet = "abcdefghijklmnopqrstuvwxyz";
+//     return "position of letter is: " + (alphabet.indexOf(letter) + 1);
+// }
+//  console.log(position("b"));
 
- 
+function doubleLetters(string) {
+    string.split(" ").map(char => char + char).join(" ");
+}
+console.log(doubleLetters("Somewhere in time")); 
