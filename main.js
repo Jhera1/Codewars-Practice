@@ -42,13 +42,35 @@
 // console.log(decode('pumy', 'um'));  
 // // Expected output: ['pumy']
 
+//#1
 // function position(letter) {
 //     const alphabet = "abcdefghijklmnopqrstuvwxyz";
 //     return "position of letter is: " + (alphabet.indexOf(letter) + 1);
 // }
 //  console.log(position("b"));
 
-function doubleLetters(string) {
-    string.split(" ").map(char => char + char).join(" ");
-}
-console.log(doubleLetters("Somewhere in time")); 
+//#2
+// function doubleLetters(str) {
+//    return str.split('').map(char => char + char).join('');
+// }
+// console.log(doubleLetters("Somewhere in time")); 
+
+//#3
+// let countSheep = function (num){
+//     let result = "";
+//     for (let i = 1; i <= num; i++) {
+//        result = result + i + " sheep...";
+//     } 
+//     return result
+// } 
+
+//or
+
+// let countSheep = function (num){
+//     let result = "";
+//   for (i = 1; i <= num; i++) {
+//     result += i + "sheep...";
+//   }
+//   return result;
+// }
+//console.log(countSheep(5));   
