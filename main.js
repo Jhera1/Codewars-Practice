@@ -94,11 +94,22 @@
 
 //#5 Build a function that returns an array of integers from n to 1 where n>0.
 
-const revSeq = (n) => {
-    const result = [];
-    for (i = n; i > 0; i--) {
-        result.push(i);
+// const revSeq = (n) => {
+//     const result = [];
+//     for (i = n; i > 0; i--) {
+//         result.push(i);
+//     }
+//     return result;
+// };
+// console.log(revSeq(7));
+
+//#6 count the monkeys in the forest 1 by 1
+
+function monkeyCount(n) {
+    monkeys = [];
+    for (i = 1; i <= n; i++) {
+        monkeys.push(i);
     }
-    return result;
+    return monkeys
 };
-console.log(revSeq(7));
+console.log(monkeyCount(10));
