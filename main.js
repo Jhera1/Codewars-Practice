@@ -76,18 +76,29 @@
 //console.log(countSheep(5));   
 
 //#4 Rock, Paper, Scissors
-function rps(p1, p2) {
-    if (p1 === p2) {
-        return "Draw!";
+// function rps(p1, p2) {
+//     if (p1 === p2) {
+//         return "Draw!";
+//     }
+//     if (
+//         (p1 === "Scissors" && p2 === "Paper") ||
+//         (p1 === "Rock" && p2 === "Scissors") ||
+//         (p1 === "Paper" && p2 === "Rock")
+//      ) {
+//         return "p1 wins!"
+//     } else {
+//         return "p2 wins!"
+//     }
+// }
+// console.log(rps("Rock", "Rock"));
+
+//#5 Build a function that returns an array of integers from n to 1 where n>0.
+
+const revSeq = (n) => {
+    const result = [];
+    for (i = n; i > 0; i--) {
+        result.push(i);
     }
-    if (
-        (p1 === "Scissors" && p2 === "Paper") ||
-        (p1 === "Rock" && p2 === "Scissors") ||
-        (p1 === "Paper" && p2 === "Rock")
-     ) {
-        return "p1 wins!"
-    } else {
-        return "p2 wins!"
-    }
-}
-console.log(rps("Rock", "Rock"));
+    return result;
+};
+console.log(revSeq(7));
