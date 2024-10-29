@@ -74,3 +74,20 @@
 //   return result;
 // }
 //console.log(countSheep(5));   
+
+//#4 Rock, Paper, Scissors
+function rps(p1, p2) {
+    if (p1 === p2) {
+        return "Draw!";
+    }
+    if (
+        (p1 === "Scissors" && p2 === "Paper") ||
+        (p1 === "Rock" && p2 === "Scissors") ||
+        (p1 === "Paper" && p2 === "Rock")
+     ) {
+        return "p1 wins!"
+    } else {
+        return "p2 wins!"
+    }
+}
+console.log(rps("Rock", "Rock"));
