@@ -105,11 +105,11 @@
 
 //#6 count the monkeys in the forest 1 by 1
 
-function monkeyCount(n) {
-    monkeys = [];
-    for (i = 1; i <= n; i++) {
-        monkeys.push(i);
-    }
-    return monkeys
-};
-console.log(monkeyCount(10));
+// function monkeyCount(n) {
+//     monkeys = [];
+//     for (i = 1; i <= n; i++) {
+//         monkeys.push(i);
+//     }
+//     return monkeys
+// };
+// console.log(monkeyCount(10));
