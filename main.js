@@ -114,15 +114,60 @@
 // };
 // console.log(monkeyCount(10));  
 
-// #7
+// #7 (8 kyu)
 //A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
 //Return true if yes, false otherwise :)
 
-function hero(bullets, dragons){
-    if (bullets >= dragons * 2) {
-      return true;
-    } else {
-        return false;
-    }
-}
-  console.log(hero(4, 3));   
+// function hero(bullets, dragons){
+//     if (bullets >= dragons * 2) {
+//       return true;
+//     } else {
+//         return false;
+//     }
+// }
+//or
+// const hero = (bullets, dragons) => bullets >= dragons * 2 ?  true : false;
+//   console.log(hero(4, 2)); 
+
+//#8
+// Description:
+// The museum of incredibly dull things
+// The museum of incredibly dull things wants to get rid of some exhibits. Miriam, the interior architect, comes up with a plan to remove the most boring exhibits. She gives them a rating, and then removes the one with the lowest rating.
+
+// However, just as she finished rating all exhibits, she's off to an important fair, so she asks you to write a program that tells her the ratings of the exhibits after removing the lowest one. Fair enough.
+
+// Task
+// Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with the lowest index. If you get an empty array/list, return an empty array/list.
+
+// Don't change the order of the elements that are left.
+
+// Examples
+// * Input: [1,2,3,4,5], output = [2,3,4,5]
+// * Input: [5,3,2,1,4], output = [5,3,2,4]
+// * Input: [2,2,1,2,1], output = [2,2,2,1]
+
+
+
+//#9 (6 kyu)
+// A Storm at Sea
+// Jill the adventurer has seen everything, from the highest mountains, to the most dangerous animals. But today she sailed through a hideous storm and shipwrecked. Left with only a damaged life boat and some supplies, she has carefully balanced out the weight not to capsize. But the weight is too much for the small life boat, she has to get rid of some items.
+
+// Beginning from one side of the boat, she starts to remove the n smallest items and hopes for the best…
+
+// Task
+// Given an array of integers, remove the n smallest. If there are multiple elements with the same value, remove the ones with a lower index first. If n is greater than the length of the array/list, return an empty list/array. If n is zero or less, return the original array/list.
+
+// Don't change the order of the elements that are left.
+
+// Examples
+// removeSmallest (-10) [1,2,3,4,5] = [1,2,3,4,5]
+// removeSmallest 0 [1,2,3,4,5] = [1,2,3,4,5]
+// removeSmallest 2 [5,3,2,1,4] = [5,3,4]
+// removeSmallest 3 [5,3,2,1,4] = [5,4]
+// removeSmallest 3 [1,2,3,4,5] = [4,5]
+// removeSmallest 5 [1,2,3,4,5] = []
+// removeSmallest 9 [1,2,3,4,5] = []
+
+// removeSmallest 2 [1,2,1,2,1] = [2,2,1]
+
+//(solution)
