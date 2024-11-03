@@ -146,6 +146,24 @@
 // * Input: [5,3,2,1,4], output = [5,3,2,4]
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
+//(solution)
+
+// function removeSmallest(numbers) {
+//   if (numbers.length === 0) return []; // Return an empty array if the input is empty
+   
+//   const min = Math.min(...numbers); // Find the smallest value
+//   const index = numbers.indexOf(min); // Get the index of the first occurrence of the smallest value
+   
+//   return numbers.slice(0, index).concat(numbers.slice(index + 1)); // Return a new array without the smallest value
+// }
+
+//or
+
+function removeSmallest(numbers) {
+    let indexOfMin = numbers.indexOf(Math.min(...numbers));
+    return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+  }
+   console.log(removeSmallest([1, 2, 2, 2, 2, 2])); 
 
 
 //#9 (6 kyu)
