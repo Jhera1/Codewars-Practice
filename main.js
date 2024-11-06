@@ -158,7 +158,7 @@
 //   return numbers.slice(0, index).concat(numbers.slice(index + 1)); // Return a new array without the smallest value
 // }
 
-or
+//or
 
 // function removeSmallest(numbers) {
 //     let indexOfMin = numbers.indexOf(Math.min(...numbers));
