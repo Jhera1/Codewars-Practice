@@ -129,7 +129,8 @@
 // const hero = (bullets, dragons) => bullets >= dragons * 2 ?  true : false;
 //   console.log(hero(4, 2)); 
 
-//#8
+//#8 (7 kyu) Remove the minimum
+
 // Description:
 // The museum of incredibly dull things
 // The museum of incredibly dull things wants to get rid of some exhibits. Miriam, the interior architect, comes up with a plan to remove the most boring exhibits. She gives them a rating, and then removes the one with the lowest rating.
@@ -157,16 +158,20 @@
 //   return numbers.slice(0, index).concat(numbers.slice(index + 1)); // Return a new array without the smallest value
 // }
 
-//or
+or
 
-function removeSmallest(numbers) {
-    let indexOfMin = numbers.indexOf(Math.min(...numbers));
-    return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
-  }
-   console.log(removeSmallest([1, 2, 2, 2, 2, 2])); 
+// function removeSmallest(numbers) {
+//     let indexOfMin = numbers.indexOf(Math.min(...numbers));
+//     return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+//   }
+//    console.log(removeSmallest([1, 2, 2, 2, 2, 2])); 
 
 
-//#9 (6 kyu)
+// #9 (6 kyu)
+// Another one down "survival of the fittest"
+
+// Description:
+// Stuck? [Try this one](http://www.codewars.com/kata/remove-the-minimum).
 // A Storm at Sea
 // Jill the adventurer has seen everything, from the highest mountains, to the most dangerous animals. But today she sailed through a hideous storm and shipwrecked. Left with only a damaged life boat and some supplies, she has carefully balanced out the weight not to capsize. But the weight is too much for the small life boat, she has to get rid of some items.
 
@@ -187,5 +192,3 @@ function removeSmallest(numbers) {
 // removeSmallest 9 [1,2,3,4,5] = []
 
 // removeSmallest 2 [1,2,1,2,1] = [2,2,1]
-
-//(solution)
