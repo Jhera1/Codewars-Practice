@@ -160,11 +160,11 @@
 
 //or
 
-function removeSmallest(numbers) {
-    let indexOfMin = numbers.indexOf(Math.min(...numbers));
-    return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
-  }
-   console.log(removeSmallest([1, 2, 3, 4, 5])); 
+// function removeSmallest(numbers) {
+//     let indexOfMin = numbers.indexOf(Math.min(...numbers));
+//     return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+//   }
+//    console.log(removeSmallest([1, 2, 3, 4, 5])); 
 
 
 // #9 (6 kyu)
@@ -192,3 +192,32 @@ function removeSmallest(numbers) {
 // removeSmallest 9 [1,2,3,4,5] = []
 
 // removeSmallest 2 [1,2,1,2,1] = [2,2,1]
+
+
+//////////////////////////////////////////////////////////
+
+
+// 1 Respond with the correct character, given the line of the
+// poem, if this were said at the front door.
+
+//@param {string} line
+ //@returns {string}
+
+
+
+const frontDoorResponse = (line) => line[0];
+console.log(frontDoorResponse('Somewhere in time'));
+
+//  2 Format the password for the front-door, given the response
+//  letters.
+
+//  @param {string} word the letters you responded with before
+//  @returns {string} the front door password
+
+// export function frontDoorPassword(word) {
+//   throw new Error('Remove this line and implement the function');
+// }
+function backDoorResponse(line) {
+    return line.trim;
+}
+    console.log(backDoorResponse('Somewhere in time'));
