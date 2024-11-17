@@ -218,6 +218,6 @@ console.log(frontDoorResponse('Somewhere in time'));
 //   throw new Error('Remove this line and implement the function');
 // }
 function backDoorResponse(line) {
-    return line.trim;
+    return line.trim();
 }
     console.log(backDoorResponse('Somewhere in time'));
