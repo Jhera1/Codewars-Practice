@@ -205,8 +205,8 @@
 
 
 
-const frontDoorResponse = (line) => line[0];
-console.log(frontDoorResponse('Somewhere in time'));
+// const frontDoorResponse = (line) => line[0];
+// console.log(frontDoorResponse('Somewhere in time'));
 
 //  2 Format the password for the front-door, given the response
 //  letters.
@@ -218,6 +218,6 @@ console.log(frontDoorResponse('Somewhere in time'));
 //   throw new Error('Remove this line and implement the function');
 // }
 function backDoorResponse(line) {
-    return line.trim();
+    return line;
 }
     console.log(backDoorResponse('Somewhere In Time'));
