@@ -217,7 +217,34 @@
 // export function frontDoorPassword(word) {
 //   throw new Error('Remove this line and implement the function');
 // }
-function backDoorResponse(line) {
-    return line;
-}
-    console.log(backDoorResponse('Somewhere In Time'));
+// function backDoorResponse(line) {
+//     return line;
+// }
+//     console.log(backDoorResponse('Somewhere In Time'));
+
+function pairEmUp(n) {
+    if (n < 2) return [];
+    const result = [];
+  
+    const combine = (start, size, current) => {
+      if (current.length === size) return result.push([...current]);
+      for (let i = start; i < n; i++) {
+        combine(i + 1, size, [...current, i]);
+      }
+    };
+  
+    for (let size = 2; size <= n; size += 2) combine(0, size, []);
+  
+    return result.sort((a, b) => {
+      for (let i = 0; i < Math.min(a.length, b.length); i++) {
+        if (a[i] !== b[i]) return a[i] - b[i];
+      }
+      return b.length - a.length;
+    });
+  }
+  
+  // Test cases
+  console.log(pairEmUp(0)); // []
+  console.log(pairEmUp(1)); // []
+  console.log(pairEmUp(2)); // [ [ 0, 1 ] ]
+  console.log(pairEmUp(3)); // [ [ 0, 1 ], [ 0, 2 ], [ 1, 2 ] ]
