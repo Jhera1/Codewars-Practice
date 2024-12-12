@@ -222,28 +222,67 @@
 // }
 //     console.log(backDoorResponse('Somewhere In Time'));
 
+// function pairEmUp(n) {
+//     if (n < 2) return [];
+//     const result = [];
+  
+//     const combine = (start, size, current) => {
+//       if (current.length === size) return result.push([...current]);
+//       for (let i = start; i < n; i++) {
+//         combine(i + 1, size, [...current, i]);
+//       }
+//     };
+  
+//     for (let size = 2; size <= n; size += 2) combine(0, size, []);
+  
+//     return result.sort((a, b) => {
+//       for (let i = 0; i < Math.min(a.length, b.length); i++) {
+//         if (a[i] !== b[i]) return a[i] - b[i];
+//       }
+//       return b.length - a.length;
+//     });
+//   }
+  
+//   // Test cases
+//   console.log(pairEmUp(0)); // []
+//   console.log(pairEmUp(1)); // []
+//   console.log(pairEmUp(2)); // [ [ 0, 1 ] ]
+//   console.log(pairEmUp(3)); // [ [ 0, 1 ], [ 0, 2 ], [ 1, 2 ] ]
+
 function pairEmUp(n) {
-    if (n < 2) return [];
+    if (n < 2) return []; // No valid groups if n is less than 2
+  
     const result = [];
   
+    // Function to generate combinations
     const combine = (start, size, current) => {
-      if (current.length === size) return result.push([...current]);
-      for (let i = start; i < n; i++) {
-        combine(i + 1, size, [...current, i]);
+      if (current.length === size) {
+        result.push([...current]); // When a combination is complete, push it to the result
+      } else {
+        for (let i = start; i < n; i++) {
+          combine(i + 1, size, [...current, i]); // Add the current index and recurse
+        }
       }
     };
   
-    for (let size = 2; size <= n; size += 2) combine(0, size, []);
+    // Generate combinations for all valid sizes (multiples of 2 up to n)
+    for (let size = 2; size <= n; size += 2) {
+      combine(0, size, []);
+    }
   
-    return result.sort((a, b) => {
+    // Sort the result: first by lexicographical order, then by length in descending order for ties
+    result.sort((a, b) => {
+      // First, compare the arrays lexicographically
       for (let i = 0; i < Math.min(a.length, b.length); i++) {
         if (a[i] !== b[i]) return a[i] - b[i];
       }
+      // If they are identical up to the shortest length, compare by length (larger first)
       return b.length - a.length;
     });
+  
+    return result;
   }
   
-  // Test cases
   console.log(pairEmUp(0)); // []
   console.log(pairEmUp(1)); // []
   console.log(pairEmUp(2)); // [ [ 0, 1 ] ]
