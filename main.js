@@ -288,12 +288,20 @@
 //   console.log(pairEmUp(2)); // [ [ 0, 1 ] ]
 //   console.log(pairEmUp(3)); // [ [ 0, 1 ], [ 0, 2 ], [ 1, 2 ] ]
 
-const findSquares = num => {
-  let k = (num - 1) / 2;
-  let max = Math.pow(k + 1, 2);
-  let min = Math.pow(k, 2);
+// const findSquares = num => {
+//   let k = (num - 1) / 2; 
+//   let max = Math.pow(k + 1, 2);
+//   let min = Math.pow(k, 2);
 
-  return `${max}-${min}`;
-};
+//   return `${max}-${min}`;
+// };
 
-findSquares(100);
+// console.log(findSquares(100));
+
+const minSumMaxSum = arr => {
+  arr.sort((a, b) => a - b);
+  let minSum = arr.slice(0, 4);
+  let maxSum = arr.slice(1, 5);
+  return `${minSum} ${maxSum}`
+}
+minSumMaxSum([12, 11, 45, 32, 31]);
