@@ -249,41 +249,51 @@
 //   console.log(pairEmUp(2)); // [ [ 0, 1 ] ]
 //   console.log(pairEmUp(3)); // [ [ 0, 1 ], [ 0, 2 ], [ 1, 2 ] ]
 
-function pairEmUp(n) {
-    if (n < 2) return []; // No valid groups if n is less than 2
+// function pairEmUp(n) {
+//     if (n < 2) return []; // No valid groups if n is less than 2
   
-    const result = [];
+//     const result = [];
   
-    // Function to generate combinations
-    const combine = (start, size, current) => {
-      if (current.length === size) {
-        result.push([...current]); // When a combination is complete, push it to the result
-      } else {
-        for (let i = start; i < n; i++) {
-          combine(i + 1, size, [...current, i]); // Add the current index and recurse
-        }
-      }
-    };
+//     // Function to generate combinations
+//     const combine = (start, size, current) => {
+//       if (current.length === size) {
+//         result.push([...current]); // When a combination is complete, push it to the result
+//       } else {
+//         for (let i = start; i < n; i++) {
+//           combine(i + 1, size, [...current, i]); // Add the current index and recurse
+//         }
+//       }
+//     };
   
-    // Generate combinations for all valid sizes (multiples of 2 up to n)
-    for (let size = 2; size <= n; size += 2) {
-      combine(0, size, []);
-    }
+//     // Generate combinations for all valid sizes (multiples of 2 up to n)
+//     for (let size = 2; size <= n; size += 2) {
+//       combine(0, size, []);
+//     }
   
-    // Sort the result: first by lexicographical order, then by length in descending order for ties
-    result.sort((a, b) => {
-      // First, compare the arrays lexicographically
-      for (let i = 0; i < Math.min(a.length, b.length); i++) {
-        if (a[i] !== b[i]) return a[i] - b[i];
-      }
-      // If they are identical up to the shortest length, compare by length (larger first)
-      return b.length - a.length;
-    });
+//     // Sort the result: first by lexicographical order, then by length in descending order for ties
+//     result.sort((a, b) => {
+//       // First, compare the arrays lexicographically
+//       for (let i = 0; i < Math.min(a.length, b.length); i++) {
+//         if (a[i] !== b[i]) return a[i] - b[i];
+//       }
+//       // If they are identical up to the shortest length, compare by length (larger first)
+//       return b.length - a.length;
+//     });
   
-    return result;
-  }
+//     return result;
+//   }
   
-  console.log(pairEmUp(0)); // []
-  console.log(pairEmUp(1)); // []
-  console.log(pairEmUp(2)); // [ [ 0, 1 ] ]
-  console.log(pairEmUp(3)); // [ [ 0, 1 ], [ 0, 2 ], [ 1, 2 ] ]
+//   console.log(pairEmUp(0)); // []
+//   console.log(pairEmUp(1)); // []
+//   console.log(pairEmUp(2)); // [ [ 0, 1 ] ]
+//   console.log(pairEmUp(3)); // [ [ 0, 1 ], [ 0, 2 ], [ 1, 2 ] ]
+
+const findSquares = num => {
+  let k = (num - 1) / 2;
+  let max = Math.pow(k + 1, 2);
+  let min = Math.pow(k, 2);
+
+  return `${max}-${min}`;
+};
+
+findSquares(100);
