@@ -298,10 +298,24 @@
 
 // console.log(findSquares(100));
 
-const minSumMaxSum = arr => {
+
+
+// const minSumMaxSum = arr => {
+//   arr.sort((a, b) => a - b);
+//   const minSum = arr.slice(0, 4).reduce((a, b) => a + b, 0);
+//   const maxSum = arr.slice(1, 5).reduce((a, b) => a + b, 0);
+//   console.log(`${minSum} ${maxSum}`)   
+// }
+// minSumMaxSum([12, 11, 45, 32, 31])
+
+function miniMaxSum(arr) {
   arr.sort((a, b) => a - b);
-  let minSum = arr.slice(0, 4);
-  let maxSum = arr.slice(1, 5);
-  return `${minSum} ${maxSum}`
+   
+   const minSum = arr.slice(0, 4).reduce((a, b) => a + b, 0);
+
+   const maxSum = arr.slice(1, 5).reduce((a, b) => a + b, 0);
+
+   console.log(minSum, maxSum);
 }
-minSumMaxSum([12, 11, 45, 32, 31]);
+miniMaxSum([1, 3, 5, 7, 9]);
+
