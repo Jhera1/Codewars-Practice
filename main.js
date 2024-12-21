@@ -308,14 +308,24 @@
 // }
 // minSumMaxSum([12, 11, 45, 32, 31])
 
-function miniMaxSum(arr) {
-  arr.sort((a, b) => a - b);
+// function miniMaxSum(arr) {
+//   arr.sort((a, b) => a - b);
    
-   const minSum = arr.slice(0, 4).reduce((a, b) => a + b, 0);
+//    const minSum = arr.slice(0, 4).reduce((a, b) => a + b, 0);
 
-   const maxSum = arr.slice(1, 5).reduce((a, b) => a + b, 0);
+//    const maxSum = arr.slice(1, 5).reduce((a, b) => a + b, 0);
 
-   console.log(minSum, maxSum);
+//    console.log(minSum, maxSum);
+// }
+// miniMaxSum([1, 3, 5, 7, 9]); 
+
+function mergeStrings(word1, word2) {
+  return [...word1, ...word2]
+    .map((_, i) => (word1[i] || '') + (word2[i] || ''))
+    .join('');
 }
-miniMaxSum([1, 3, 5, 7, 9]);
+
+console.log(mergeStrings("abc", "pqr"));   // Output: "apbqcr"
+console.log(mergeStrings("abcd", "pq"));   // Output: "apbqcd"
+
 
