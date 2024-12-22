@@ -337,4 +337,4 @@ var mergeAlternately = function(word1, word2) {
    return accumulator.join('');
  };
 
-mergeAlternately("Smhr n ie", "omweeitm")
+console.log(mergeAlternately("Smweei ie", "oehr ntm"));
