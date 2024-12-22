@@ -319,13 +319,22 @@
 // }
 // miniMaxSum([1, 3, 5, 7, 9]); 
 
-function mergeStrings(word1, word2) {
-  return [...word1, ...word2]
-    .map((_, i) => (word1[i] || '') + (word2[i] || ''))
-    .join('');
-}
+// function mergeStrings(word1, word2) {
+//   return [...word1, ...word2].map((_, i) => (word1[i] || '') + (word2[i] || ''))
+//     .join('');
+// }
 
-console.log(mergeStrings("abc", "pqr"));   // Output: "apbqcr"
-console.log(mergeStrings("abcd", "pq"));   // Output: "apbqcd"
+// console.log(mergeStrings("abc", "pqr"));   
+// console.log(mergeStrings("abcd", "pq"));  
 
+var mergeAlternately = function(word1, word2) {
+  const accumulator = [];
+  const longestArray = Math.max(word1.length, word2.length);
+ for (let i = 0; i < longestArray; i++) {
+     if (word1[i]) {accumulator.push(word1[i])}
+     if (word2[i]) {accumulator.push(word2[i])}
+   }
+   return accumulator.join('');
+ };
 
+mergeAlternately("Smhr n ie", "omweeitm")
