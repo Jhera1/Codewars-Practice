@@ -387,4 +387,25 @@
 // in the flowerbed without violating the no-adjacent-flowers 
 // rule and false otherwise.
 
-const canYouPlant = (flowerBed, n) => 
+// const canYouPlant = (flowerBed, n) => flowerBed.map(n => fb === 0 && fb + 1 === 0 && fb - 1 === 0 ? true : false);
+// console.log(canYouPlant([1, 0, 0, 0, 1], 2));
+
+// function canPlaceFlowers(flowerbed, n) {
+//   let count = 0; // Keep track of how many flowers we can plant
+//   let length = flowerbed.length;
+
+//   for (let i = 0; i < length; i++) {
+//       // Check if the current plot is empty and the adjacent plots (if any) are also empty
+     
+//           // Plant a flower here
+          
+        
+//           // Skip the next plot to maintain the no-adjacent rule
+         
+//       }
+//       // Early exit if we have planted enough flowers
+      
+
+// // Example usage:
+// console.log(canPlaceFlowers([1, 0, 0, 0, 1], 1)); // Output: true
+// console.log(canPlaceFlowers([1, 0, 0, 0, 1], 2)); // Output: false
