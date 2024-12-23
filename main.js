@@ -327,14 +327,47 @@
 // console.log(mergeStrings("abc", "pqr"));   
 // console.log(mergeStrings("abcd", "pq"));  
 
-var mergeAlternately = function(word1, word2) {
-  const accumulator = [];
-  const longestArray = Math.max(word1.length, word2.length);
- for (let i = 0; i < longestArray; i++) {
-     if (word1[i]) {accumulator.push(word1[i])}
-     if (word2[i]) {accumulator.push(word2[i])}
-   }
-   return accumulator.join('');
- };
+// var mergeAlternately = function(word1, word2) {
+//   const accumulator = [];
+//   const longestArray = Math.max(word1.length, word2.length);
+//  for (let i = 0; i < longestArray; i++) {
+//      if (word1[i]) {accumulator.push(word1[i])}
+//      if (word2[i]) {accumulator.push(word2[i])}
+//    }
+//    return accumulator.join('');
+//  };
 
-console.log(mergeAlternately("Smweei ie", "oehr ntm"));
+// console.log(mergeAlternately("Smweei ie", "oehr ntm"));
+
+
+// function gcdOfStrings(str1, str2) {
+//   const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b)); // GCD calculation
+//   const lenGCD = gcd(str1.length, str2.length); // GCD of string lengths
+//   const candidate = str1.slice(0, lenGCD); // Candidate substring
+
+//   return str1 + str2 === str2 + str1 ? candidate : ""; // Validate divisibility
+// }
+
+
+// function gcdOfStrings(str1, str2) {
+//   if (str1.concat(str2) !== str2.concat(str1)) {
+//       return ""; // If concatenations differ, no common divisor exists
+//   }
+//   const gcd = (a, b) => b === 0 ? a : gcd(b, a % b); // Calculate GCD of lengths
+//   const lenGCD = gcd(str1.length, str2.length);
+//   return str1.slice(0, lenGCD); // The common divisor string
+// }
+
+
+// // Example Usage
+// console.log(gcdOfStrings("abcabc", "abc")); 
+// console.log(gcdOfStrings("ababab", "ab")); 
+// console.log(gcdOfStrings("LEET", "")); 
+
+var kidsWithCandies = function(candies, extraCandies) {
+  // loop through candies array
+  // check if candies[i] + extraCandies is the largest in array
+  // if so push true to new array 
+  // if not push false to new array 
+
+};
