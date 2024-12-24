@@ -409,3 +409,35 @@
 // // Example usage:
 // console.log(canPlaceFlowers([1, 0, 0, 0, 1], 1)); // Output: true
 // console.log(canPlaceFlowers([1, 0, 0, 0, 1], 2)); // Output: false
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+// Given a string s, reverse only all the vowels in the string 
+// and return it.
+
+// The vowels are 'a', 'e', 'i', 'o', and 'u', and they 
+// can appear in both lower and upper cases, more than once.
+
+ //create separate string for vowels
+ //reverse vowel string
+ //concat string each item in turn
+
+//  const reverseVowels = s => {
+//     result = "";
+//     stringOfVowels = [...s].filter(char => "aeiouAEIOU".includes(s)).join("");
+//     return stringOfVowels
+//   }
+  
+
+// console.log(reverseVowels("somewhere in time"));
+
+// Simple string reverse
+const reverse = str => {
+  let reversed = ""
+  for (let i = 0; i < str.length; i++) {
+    reversed = str[i] + reversed
+  } 
+  return reversed
+}
+console.log(reverse("Somewhere in time"))
