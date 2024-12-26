@@ -430,14 +430,71 @@
 //   }
   
 
+
 // console.log(reverseVowels("somewhere in time"));
 
 // Simple string reverse
-const reverse = str => {
-  let reversed = ""
-  for (let i = 0; i < str.length; i++) {
-    reversed = str[i] + reversed
-  } 
+// const reverse = str => {
+//   let reversed = ""
+//   for (char of str) {
+//     reversed = char + reversed
+//   } 
+//   return reversed
+// }
+
+
+
+///////////////////////////////////////////////////
+                       //Top 10
+///////////////////////////////////////////////////////
+
+// reverse string and integer
+
+//a) split, reverse, join
+function reverse(str) {
+  let reversed = ''
+  for (let char of str) {
+    reversed = char + reversed;
+  }
   return reversed
 }
+
+// (chaining)
+// const reverse = str => str.split('').reverse().join('');
+
 console.log(reverse("Somewhere in time"))
+
+
+// b) split, reverse, join then... return using parseInt() & Math.sign()
+// reverse integer
+
+function reverseInt (n) {
+  const reversed = n.toString().split('').reverse().join('')
+  return parseInt(reversed) * Math.sign(n)
+}
+console.log(reverseInt(2345))
+
+
+// #2 Palindrome
+
+function palindrome(str) {
+  // reverse string and turn to lowercase
+  const reverseStr = str.split('').reverse().join('');
+  // compare the two strings
+  if (reverseStr === str) {
+    // return true or false
+    return true
+  } return false
+  
+
+}
+console.log(palindrome('saas'))
+// #3 Max Char 
+// #4 Array Chunking 
+// #5 Title Case 
+// #6 Anagrams 
+// #7 Count Vowels 
+// #8 Fizz Buzz 
+// #9 Steps String Pattern 
+// #10 Pyramid String Pattern 
+// Bonus - Spiral Matrix
