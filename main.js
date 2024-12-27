@@ -462,11 +462,13 @@ function reverse(str) {
 // (chaining)
 // const reverse = str => str.split('').reverse().join('');
 
-console.log(reverse("Somewhere in time"))
+console.log('#1 ' + reverse("Somewhere in time"))
 
 
-// b) split, reverse, join then... return using parseInt() & Math.sign()
-// reverse integer
+// b) reverse integer
+//a)split, reverse, join 
+//b)return using !!!parseInt() & Math.sign()!!!!
+
 
 function reverseInt (n) {
   const reversed = n.toString().split('').reverse().join('')
@@ -475,24 +477,200 @@ function reverseInt (n) {
 console.log(reverseInt(2345))
 
 
-// #2 Palindrome
-
+// #2 Palindrome 
+// a)reverse string and turn to lowercase
+// b)in another variable then return 
+// c)the comparison
 function palindrome(str) {
   // reverse string and turn to lowercase
-  const reverseStr = str.split('').reverse().join('');
-  // compare the two strings
-  if (reverseStr === str) {
-    // return true or false
-    return true
-  } return false
+  toLowerCase = str.toLowerCase()
+  const reverseStr = toLowerCase.split('').reverse().join('');
   
+  // compare the two strings
+  // if (reverseStr === str) {
+  //   // return true or false
+  //   return true
+  // } return false
+          // or
+  return toLowerCase === reverseStr
+}
+console.log('#3 ' + palindrome('saaS'))
+
+
+// #3 Max Char
+
+// 1. Initialize an empty object `charMap`.
+// 2. Initialize variables `maxCount` to 0 and `mostUsedChar` to an empty string.
+
+// 3. For each character `char` in the string:
+//     a. If `char` exists in `charMap`:
+//         - Increment its value by 1.
+//     b. Otherwise:
+//         - Add `char` to `charMap` with a value of 1.
+
+// 4. For each key (character) in `charMap`:
+//     a. If the value of the key is greater than `maxCount`:
+//         - Update `maxCount` to the value of the key.
+//         - Update `mostUsedChar` to the key.
+
+// 5. Return `mostUsedChar`.
+
+
+
+function maxChar(str) {
+    const charMap = {};
+    let max = 0;
+    let maxChar = '';
+    
+    for (let char of str) {
+      // if (charMap[char]) {
+      //   charMap[char] = charMap[char] +1
+      // } else {
+      //   charMap[char] = 1
+      // }
+      //or
+      //charMap[char] = charMap[char] + 1 || 1
+      //or
+      charMap[char] = ++charMap[char] || 1
+
+    }
+    // for(const [key, value] of Object.entries(charMap)) {
+    // or
+    for(let key in charMap) {
+
+      // //console.log(key, value)
+      // if (value > max) {
+      //   max = value
+      //   maxChar = key
+      //or
+      if (charMap[key] > max) {
+        max = charMap[key]
+        maxChar = key
+      }
+    }
+  return maxChar
+}
+console.log('#4 ' + maxChar("mississippi"))
+
+// #4 Array Chunking 
+// Explanation with Example:
+// For input [1, 2, 3, 4, 5, 6, 7] and size = 2:
+
+// Start with index = 0 and result = [].
+// Extract [1, 2] (slice from index 0 to 2), add it to result.
+// result = [[1, 2]], increment index to 2.
+// Extract [3, 4] (slice from index 2 to 4), add it to result.
+// result = [[1, 2], [3, 4]], increment index to 4.
+// Extract [5, 6] (slice from index 4 to 6), add it to result.
+// result = [[1, 2], [3, 4], [5, 6]], increment index to 6.
+// Extract [7] (slice from index 6 to 8), add it to result.
+// result = [[1, 2], [3, 4], [5, 6], [7]], increment index to 8.
+// Stop the loop since index (8) is no longer less than the array length (7).
+// Output: [[1, 2], [3, 4], [5, 6], [7]]
+
+// 1. Create an empty list `result`.
+// 2. Set `index` to 0.
+
+// 3. While `index` is less than the length of `arr`:
+//     a. Slice the array from `index` to `index + size`.
+//     b. Add the sliced subarray to `result`.
+//     c. Increment `index` by `size`.
+
+// 4. Return `result`.
+
+
+function chunk(arr, size) {
+   const result = [];
+   let i = 0;
+   while (i < arr.length) {
+    result.push( arr.slice(i, i + size))
+    i += size
+   }
+
+   return result
+}
+console.log(chunk([1,2,3,4,5,6,7], 2))
+
+// #5 Title Case (.toUpperCase())
+// 1. Split the input string into an array of words using spaces as the separator.
+//    Input: "somewhere in time"
+//    Words: ["somewhere", "in", "time"]
+
+// 2. Create an empty list called `result`.
+
+// 3. For each word in the array:
+//     a. Extract the first letter of the word.
+//     b. Convert the first letter to uppercase.
+//     c. Extract the rest of the word (all letters after the first).
+//     d. Convert the rest of the word to lowercase.
+//     e. Combine the uppercase first letter with the lowercase rest of the word.
+//     f. Add the processed word to the `result` list.
+
+// 4. Join the words in the `result` list into a single string, separated by spaces.
+
+// 5. Return the resulting string.
+
+
+function capitalizeString(str) {
+  const words = str.split(' ')
+  //const result = []
+
+  // for (let word of words) {
+  //   result.push(word[0].toUpperCase() + word.slice(1))
+  // }
+  // return result.join(' ')
+  // or use the .map() method
+
+  return words.map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+
 
 }
-console.log(palindrome('saas'))
-// #3 Max Char 
-// #4 Array Chunking 
-// #5 Title Case 
-// #6 Anagrams 
+console.log(capitalizeString('#6 ' + "somewhere in time"))
+
+
+
+
+// #6 Anagrams (build charMap for string A & B, then compare each char in charMap)
+// !!!!remember .replace(/[\W]/g, '')!!!!!
+//FUNCTION isAnagram(string1, string2)
+//     1. Normalize both strings:
+//         a. Remove spaces and special characters (if required).
+//         b. Convert both strings to lowercase.
+
+//     2. If the lengths of the two strings are not equal:
+//         a. RETURN false (they cannot be anagrams).
+
+//     3. Sort both strings:
+//         a. Split each string into an array of characters.
+//         b. Sort the arrays alphabetically.
+//         c. Join the arrays back into strings.
+
+//     4. Compare the sorted strings:
+//         a. If the sorted strings are equal:
+//             i. RETURN true (the strings are anagrams).
+//         b. Else:
+//             i. RETURN false (the strings are not anagrams).
+function charMap(str) {
+  const charMap = {}
+  str = str.toLowerCase().replace(/[\W]/g, '')
+  
+  for (let char of str) {
+    charMap[char] = ++charMap[char] || 1
+  }  
+}
+
+function anagrams(str1, str2) {
+  const charMapA = charMap(stringA)  
+  const charMapB = charMap(stringB)  
+return Object.keys(charMapA)
+}
+console.log(anagrams('listen', 'silent'))
+console.log(anagrams('lis?ten', 'silent'))
+console.log(anagrams('listen', 'sihlent'))
+console.log(anagrams('list!!!en', 'silent'))
+
+
+
 // #7 Count Vowels 
 // #8 Fizz Buzz 
 // #9 Steps String Pattern 
