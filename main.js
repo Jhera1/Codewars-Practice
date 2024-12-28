@@ -650,24 +650,37 @@ console.log(capitalizeString('#6 ' + "somewhere in time"))
 //             i. RETURN true (the strings are anagrams).
 //         b. Else:
 //             i. RETURN false (the strings are not anagrams).
-function charMap(str) {
-  const charMap = {}
-  str = str.toLowerCase().replace(/[\W]/g, '')
+// function charMap(str) {
+//   const charMap = {}
+//   str = str.toLowerCase().replace(/[\W]/g, '')
   
-  for (let char of str) {
-    charMap[char] = ++charMap[char] || 1
-  }  
-}
+//   for (let char of str) {
+//     charMap[char] = ++charMap[char] || 1
+//   } 
+//   return charMap 
+// }
 
-function anagrams(str1, str2) {
-  const charMapA = charMap(stringA)  
-  const charMapB = charMap(stringB)  
-return Object.keys(charMapA)
-}
+// function anagrams(str1, str2) {
+//   const charMapA = charMap(str1)  
+//   const charMapB = charMap(str2)  
+//   if (Object.keys(charMapA).length !== Object.keys(charMapB).length) {
+// return false
+//   }
+//   for (let key in charMapA) {
+//     if (charMapA[key] !== charMapB[key]) {
+//       return false
+//     }
+//   }
+//   return true
+// }
+          // or
+ const cleanString = str => str.toLowerCase().replace(/[\W]/g, '').split('').sort().join('')
+ const anagrams = (strA, strB) => cleanString(strA) === cleanString(strB)
+       
 console.log(anagrams('listen', 'silent'))
-console.log(anagrams('lis?ten', 'silent'))
-console.log(anagrams('listen', 'sihlent'))
-console.log(anagrams('list!!!en', 'silent'))
+// console.log(anagrams('lis?ten', 'silent'))
+// console.log(anagrams('listen', 'sihlent'))
+// console.log(anagrams('list!!!en', 'silent'))
 
 
 
