@@ -462,7 +462,7 @@ function reverse(str) {
 // (chaining)
 // const reverse = str => str.split('').reverse().join('');
 
-console.log('#1 ' + reverse("Somewhere in time"))
+// console.log('#1 ' + reverse("Somewhere in time"))
 
 
 // b) reverse integer
@@ -474,7 +474,7 @@ function reverseInt (n) {
   const reversed = n.toString().split('').reverse().join('')
   return parseInt(reversed) * Math.sign(n)
 }
-console.log(reverseInt(2345))
+// console.log(reverseInt(2345))
 
 
 // #2 Palindrome 
@@ -483,8 +483,8 @@ console.log(reverseInt(2345))
 // c)the comparison
 function palindrome(str) {
   // reverse string and turn to lowercase
-  toLowerCase = str.toLowerCase()
-  const reverseStr = toLowerCase.split('').reverse().join('');
+  LowerCase = str.toLowerCase()
+  const reverseStr = LowerCase.split('').reverse().join('');
   
   // compare the two strings
   // if (reverseStr === str) {
@@ -492,7 +492,7 @@ function palindrome(str) {
   //   return true
   // } return false
           // or
-  return toLowerCase === reverseStr
+  return LowerCase === reverseStr
 }
 console.log('#3 ' + palindrome('saaS'))
 
@@ -518,39 +518,49 @@ console.log('#3 ' + palindrome('saaS'))
 
 
 function maxChar(str) {
-    const charMap = {};
-    let max = 0;
-    let maxChar = '';
-    
-    for (let char of str) {
-      // if (charMap[char]) {
-      //   charMap[char] = charMap[char] +1
-      // } else {
-      //   charMap[char] = 1
-      // }
-      //or
-      //charMap[char] = charMap[char] + 1 || 1
-      //or
-      charMap[char] = ++charMap[char] || 1
-
-    }
-    // for(const [key, value] of Object.entries(charMap)) {
-    // or
-    for(let key in charMap) {
-
-      // //console.log(key, value)
-      // if (value > max) {
-      //   max = value
-      //   maxChar = key
-      //or
-      if (charMap[key] > max) {
-        max = charMap[key]
-        maxChar = key
-      }
-    }
-  return maxChar
+const charMap = {}
+let mostChar = ''
+max = 0
+for (let char of str) {
+  charMap[char] = charMap[char] + 1 || 1
+} 
+for (let key in charMap) {
+  if (charMap[key] > max) {
+    max = charMap[key]
+    mostChar = key
+  }
+}
+return mostChar
 }
 console.log('#4 ' + maxChar("mississippi"))
+
+////////////////or\\\\\\\\\\\\\\\
+
+// const charMap = {}
+// let mostChar = ''
+// max = 0
+// for (let char of str) {
+//   charMap[char] = charMap[char] + 1 || 1
+// }
+// for (let key in charMap) {
+//   if (charMap[key] > max) {
+//     max = charMap[key]
+//     mostChar = key
+//   }
+// }
+// return mostChar
+
+
+// const maxChar = str => {
+//   const charMap = [...str].reduce((map, char) => (map[char] = (map[char] || 0) + 1, map), {});
+//   return Object.keys(charMap).reduce((a, b) => charMap[a] > charMap[b] ? a : b);
+// };
+
+// // Examples
+// console.log(maxChar("hello"));       // Output: "l"
+// console.log(maxChar("javascript"));  // Output: "a"
+// console.log(maxChar("aaaabbc"));     // Output: "a"
+
 
 // #4 Array Chunking 
 // Explanation with Example:
@@ -589,7 +599,7 @@ function chunk(arr, size) {
 
    return result
 }
-console.log(chunk([1,2,3,4,5,6,7], 2))
+// console.log(chunk([1,2,3,4,5,6,7], 2))
 
 // #5 Title Case (.toUpperCase())
 // 1. Split the input string into an array of words using spaces as the separator.
@@ -625,7 +635,7 @@ function capitalizeString(str) {
 
 
 }
-console.log(capitalizeString('#6 ' + "somewhere in time"))
+// console.log(capitalizeString('#6 ' + "somewhere in time"))
 
 
 
@@ -677,15 +687,315 @@ console.log(capitalizeString('#6 ' + "somewhere in time"))
  const cleanString = str => str.toLowerCase().replace(/[\W]/g, '').split('').sort().join('')
  const anagrams = (strA, strB) => cleanString(strA) === cleanString(strB)
        
-console.log(anagrams('listen', 'silent'))
+// console.log(anagrams('listen', 'silent'))
 // console.log(anagrams('lis?ten', 'silent'))
 // console.log(anagrams('listen', 'sihlent'))
 // console.log(anagrams('list!!!en', 'silent'))
 
-
-
 // #7 Count Vowels 
+
+function findVowels(str) {
+matches = str.match(/[aeiou]/gi)
+return matches ? matches.length : 0
+}
+
+// function findVowels(str) {
+//   str = str.toLowerCase()
+//   const vowelCheck = ['a','e', 'i','o','u']
+//   let count = 0
+//   for (let char of str) {
+//     if (vowelCheck.includes(char)) count++
+//   }
+//   return count
+// }
+// console.log(findVowels('SomewhereIn Time'))
+
+
 // #8 Fizz Buzz 
-// #9 Steps String Pattern 
+
+function fizzBuss(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log('fizzBuzz')
+    } else if (i % 3 === 0) {
+      console.log('fizz')
+    } else if (i % 5 === 0) {
+      console.log('buzz')
+    } else console.log(i)
+  }
+}
+// fizzBuss(15)
+
+// #9 Steps String Pattern
+
+function steps(n) {
+  for (let row = 1; row <= n; row++) {
+    let line = ''
+    for (let col = 1; col <= n; col++) {
+     if (col <= row) {
+      line += '#'
+     } else {
+      line += ' '
+     }
+    } console.log(line)
+  }
+}
+// steps(9)
 // #10 Pyramid String Pattern 
+
+function pyramid(n) {
+  const mid = Math.floor((2*n-1)/2)
+  for (let row = 0; row < n; row++) {
+    let line = ''
+    for (let col = 0; col < 2*n-1; col++) {
+      if (col >= mid - row && col <= mid + row) {
+        line += '#'
+      } else {
+        line += ' '
+      }
+    }
+    console.log(line)
+  }
+}
+// pyramid(9)
+///////////////////////////////////////
+////////////////////////////////////////
 // Bonus - Spiral Matrix
+
+function matrix(n) {
+  const result = []
+  let counter = 1, startRow = 0, endRow = n - 1, startCol = 0, endCol = n-1
+
+  for (i = 0; i < n; i++) {
+    result.push([])
+  }
+
+  while (startCol <= endCol && startRow <= endRow) {
+    //top
+  for (let i = startCol; i <= endCol; i++) {
+    result[startRow][i] = counter
+    counter++
+  }
+  startRow++
+  //right
+  for (let i = startRow; i <= endRow; i++) {
+    result[i][endCol] = counter
+    counter++
+  }
+  endCol--
+
+  //bottom
+  for (let i = endCol; i >= startCol; i--) {
+    result[endRow][i] = counter
+    counter++
+  }
+  endRow--
+
+  //left
+  for (let i = endRow; i >= startRow; i--) {
+    result[i][startCol] = counter
+    counter++
+  }
+  startCol++
+  }
+
+  return result
+}
+// console.log(matrix(4))
+
+
+// another staircase
+
+function staircase(n) {
+  for (let i = 1; i <= n; i++) {
+  let spaces = ' '.repeat(n - i);
+  let hashes = '#'.repeat(i);
+  console.log(spaces + hashes);
+  }
+}
+// staircase(4)
+
+function pyramid(n) {
+  for (let i = 1; i <= n; i++) {
+  let spaces = ' '.repeat(n - i);
+  let hashes = '#'.repeat(2 * i - 1);
+  console.log(spaces + hashes + spaces);
+  }
+}
+// pyramid(4)
+
+//reverse vowels only
+
+// var reverseVowels = function(s) {
+//   const vowels = s.match(/[aeiou]/,gi)
+//   return vowels ? vowels : []
+// }
+
+var reverseVowels = function(s) {
+  // const vowelsWithPlaceholder = s.replace(/[]/gi, )
+    const reversedVowelArr = s.match(/[aeiou]/gi).reverse()
+for (let char of reversedVowelArr) {
+  let result = ''
+  
+}
+
+
+    return reversedVowelArr
+};
+// console.log(reverseVowels('Somewhere In Time'))
+
+////////////////////////////////////
+
+
+function birthdayCakeCandles(candles) {
+  const tallest = Math.max(...candles); // Find the tallest candle
+  console.log(tallest)
+  return candles.filter(candle => candle === tallest).length; // Count how many candles are tallest
+}
+
+// Example usage:
+const candles = [3, 2, 1, 3, 4, 4, 4];
+// console.log(birthdayCakeCandles(candles)); // Output: 2
+
+//////////////////////////////////////////////////////////
+
+
+// function convertToMilitaryTime(time) {
+//   const [hours, minutes, secondsPeriod] = time.split(/[:APM]+/);
+//   const period = time.slice(-2);
+  
+//   let militaryHours = period === "AM" ? 
+//       (hours === "12" ? "00" : hours) : 
+//       (hours === "12" ? "12" : String(+hours + 12));
+
+//   return `${militaryHours.padStart(2, "0")}:${minutes}:${secondsPeriod}`;
+// }
+
+// // Example usage:
+// console.log(convertToMilitaryTime("07:05:45PM")); // Output: "19:05:45"
+// console.log(convertToMilitaryTime("12:00:00AM")); // Output: "00:00:00"
+// console.log(convertToMilitaryTime("12:00:00PM")); // Output: "12:00:00"
+// console.log(convertToMilitaryTime("06:40:15AM")); // Output: "06:40:15"
+
+
+// Create an application that will display the number of 
+// kilometers per liter (output) based on the number of 
+// miles per imperial gallon (input).
+
+// Your answer should be accurate within 0.01 kpl.
+
+// Some useful associations relevant to this kata:
+
+// 1 Imperial Gallon = 4.54609188 litres
+// 1 Mile = 1.609344 kilometers
+
+
+// const converter = mpg => parseFloat(mpg * (1.60/4.54)).toFixed(2)
+
+// console.log(converter(12))
+
+// const disemvowel = str => str.replace(/aeiou/ig, '') 
+// console.log(disemvowel('Somewhere in time'))
+
+// function descendingOrder(n){
+//   return Number(String(n).split('').filter((a, b) => b - a).join(''))
+// }
+// console.log(descendingOrder(937840))
+
+// isogram
+// word with no repeating letters  
+// case insensitive True or false
+
+// "Dermatoglyphics" --> true
+// "aba" --> false
+// "moOse" --> false (ignore letter case)
+
+
+// const isoGram = str => {
+//   const cleanString = str.toLowerCase()
+//   const compareStorage = []
+//   for (let letter of cleanString) {
+//     if (!compareStorage.includes(letter)) {
+//       compareStorage.push(letter)
+//     } else {
+//       return false
+//     }
+    
+//   }
+   
+//   return true
+// }
+// console.log(isoGram("Dermatoglyphics"))
+// console.log(isoGram("aba"))
+// console.log(isoGram("moOse"))
+
+// There is a bus moving in the city which takes and 
+//drops some people at each bus stop.
+
+// You are provided with a list (or array) of integer 
+//pairs. Elements of each pair represent the 
+// number of people that get on the bus (the first item) 
+//and the number of people that get off the bus 
+//(the second item) at a bus stop.
+
+// Your task is to return the number of people who are 
+// still on the bus after the last bus stop (after the 
+// last array). Even though it is the last bus stop, the 
+// bus might not be empty and some people might still be 
+// inside the bus, they are probably sleeping there :D
+
+// Take a look on the test cases.
+
+// Please keep in mind that the test cases ensure that 
+// the number of people in the bus is always >= 0. So 
+// the returned integer can't be negative.
+
+// The second value in the first pair in the array is 0, 
+// since the bus is empty in the first bus stop.
+
+// const aLine = [[4, 0], [0, 1], [0, 29], [0, 1]] // 0
+// const bLine = [[3, 0], [4, 1], [2, 2], [0, 2]] // 4
+// const numOfPeopleLeftOnBus = busStops => {
+//   let peopleThatGotOn = busStops.reduce((acc, [on,off]) => acc + on, 0)
+//   let peopleThatGotOff = busStops.reduce((acc, [on,off]) => acc + off, 0)
+//   const totalAtEndOfLine = peopleThatGotOn - peopleThatGotOff
+//   if (totalAtEndOfLine < 0) {
+//     return 0
+//   } else {
+//     return totalAtEndOfLine
+//   }
+// }
+
+// console.log(numOfPeopleLeftOnBus(aLine))
+
+
+// function printerError(s) {
+//   const validChar = 'abcdefghijklm'  
+//   const sToArr = s.split('')
+//   const errors = []
+//     for (let char of sToArr) {
+//       if (!validChar.includes(char)) {
+//         errors.push(char)
+//       }
+//     }
+//   console.log(errors)
+//     return `${errors.length}/${s.length}`
+// }
+
+// const printerError = str => {
+//   const errors = str.split('').filter(char => char < 'a' || char > 'm').length
+//   return `${errors}/${str.length}`
+// }
+
+// console.log(printerError('abcopq'))
+
+// Description:
+// The maximum sum subarray problem consists in finding the maximum sum of a contiguous subsequence in an array or list of integers:
+
+// maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+// // should be 6: [4, -1, 2, 1]
+// Easy case is when the list is made up of only positive numbers and the maximum sum is the sum of the whole array. If the list is made up of only negative numbers, return 0 instead.
+
+// Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray.
+
+// AlgorithmsListsDynamic ProgrammingFundamentalsPerformance
