@@ -999,3 +999,106 @@ const candles = [3, 2, 1, 3, 4, 4, 4];
 // Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray.
 
 // AlgorithmsListsDynamic ProgrammingFundamentalsPerformance
+
+// function password(password) {
+//   // Regular expression to validate the password
+//   const isValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/.test(password)
+//   return isValid;
+// }
+// // Examples
+// console.log(password("Abcd1234")); // true
+// console.log(password("Abcd123")); // false
+// console.log(password("abcd1234")); // false
+// console.log(password("AbcdefGhijKlmnopQRsTuvwxyZ1234567890")); // true
+// console.log(password("ABCD1234")); // false
+// console.log(password("Ab1!@#$%^&*()-_+={}[]|\\:;?/>.<,")); // true
+// console.log(password("!@#$%^&*()-_+={}[]|\\:;?/>.<,")); // false
+
+
+// Description:
+// Given an array of integers, find the one that appears an odd number of times.
+
+// There will always be only one integer that appears an odd number of times.
+
+// Examples
+// [7] should return 7, because it occurs 1 time (which is odd).
+// [0] should return 0, because it occurs 1 time (which is odd).
+// [1,1,2] should return 2, because it occurs 1 time (which is odd).
+// [0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
+// [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
+
+// line 539 reference
+
+// const findOddAppearance = arr => {
+//   const numMap = {}
+//   for (let num of arr) {
+//     numMap[num] = numMap[num] + 1 || 1
+//   }
+//   for (let key in numMap) {
+//     if (numMap[key] % 2 !== 0) {
+//       return parseInt(key)
+//     }
+//   }
+//   }
+
+// console.log(findOddAppearance([1,2,2,3,3,3,4,3,3,3,2,2,1]))
+
+
+
+
+
+
+
+
+
+
+
+// const findOddAppearance = arr => {
+//   let numMap = {};
+  
+//   // Create the frequency map
+//   for (let num of arr) {
+//     numMap[num] = numMap[num] + 1 || 1;
+//   }
+  
+//   // Find the number with odd occurrences
+//   for (let key in numMap) {
+//     if (numMap[key] % 2 !== 0) {
+//       return parseInt(key); // Return the first number with odd occurrences
+//     }
+//   }
+  
+//   return null; // If no odd occurrences found
+// };
+
+// console.log(findOddAppearance([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
+
+
+
+
+
+// const charMap = {}
+// let mostChar = ''
+// max = 0
+// for (let char of str) {
+//   charMap[char] = charMap[char] + 1 || 1
+// }
+// for (let key in charMap) {
+//   if (charMap[key] > max) {
+//     max = charMap[key]
+//     mostChar = key
+//   }
+// }
+// return mostChar
+
+
+
+////////////////////////////////////Rent\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// const rentCalc = hrsWorked => {
+//   const rentBeforeWorkHrs = 1320
+//   const moneyMadeWorking = hrsWorked * 25
+//   return rentBeforeWorkHrs - moneyMadeWorking
+// }
+// // 17.75hrs
+// console.log(rentCalc(29.75))
