@@ -831,18 +831,18 @@ function pyramid(n) {
 //   return vowels ? vowels : []
 // }
 
-var reverseVowels = function(s) {
-  // const vowelsWithPlaceholder = s.replace(/[]/gi, )
-    const reversedVowelArr = s.match(/[aeiou]/gi).reverse()
-for (let char of reversedVowelArr) {
-  let result = ''
+// var reverseVowels = function(s) {
+//   // const vowelsWithPlaceholder = s.replace(/[]/gi, )
+//     const reversedVowelArr = s.match(/[aeiou]/gi).reverse()
+// for (let char of reversedVowelArr) {
+//   let result = ''
   
-}
+// }
 
 
-    return reversedVowelArr
-};
-// console.log(reverseVowels('Somewhere In Time'))
+//     return reversedVowelArr
+// };
+// // console.log(reverseVowels('Somewhere In Time'))
 
 ////////////////////////////////////
 
@@ -1101,4 +1101,279 @@ const candles = [3, 2, 1, 3, 4, 4, 4];
 //   return rentBeforeWorkHrs - moneyMadeWorking
 // }
 // // 17.75hrs
-// console.log(rentCalc(29.75))
+// console.log(rentCalc(29))
+
+
+// const reverseVowels = str => {
+//   const vowels = str.match(/[aeiou]/ig)
+//   const withRevVowels = []
+// for (let letter of str) {
+//   if (/[aeiou]/i.test(letter)) {
+//     withRevVowels.push(vowels.pop())
+//   } else {
+//     withRevVowels.push(letter)
+//   }
+// }
+// return withRevVowels.join('')
+// }
+// console.log(reverseVowels('Somewhere in time'))
+///////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// 238. Product of Array Except Self
+// Medium
+// Topics
+// Companies
+// Hint
+// Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+
+// The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+
+// You must write an algorithm that runs in O(n) time and without using the division operation.
+
+ 
+
+// Example 1:
+
+// Input: nums = [1,2,3,4]
+// Output: [24,12,8,6]
+// Example 2:
+
+// Input: nums = [-1,1,0,-3,3]
+// Output: [0,0,9,0,0]
+
+// const productOfNumbersWithoutCurrIndexValue = arrOfNumbers => {
+//   const result = []
+
+//   for (let i = 0; i < arrOfNumbers.length; i++) {
+//     let arrWithoutIndex = arrOfNumbers.filter((_, index) => index !== i)
+//     let reducedArr = arrWithoutIndex.reduce((a, b) => a * b)
+//     result.push(reducedArr)
+//   }
+//   return result
+// }
+//  console.log(productOfNumbersWithoutCurrIndexValue([1, 2, 3, 4, 5]))
+
+///////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// Description:
+// You will be given a string.
+
+// You need to return an array of three strings by gradually pulling apart the string.
+
+// You should repeat the following steps until the string length is 1:
+
+// a) remove the final character from the original string, add to solution string 1. b) remove the first character from the original string, add to solution string 2.
+
+// The final solution string value is made up of the remaining character from the original string, once originalstring.length == 1.
+
+// Example:
+
+// "exampletesthere" becomes: ["erehtse","example","t"]
+
+// The Kata title gives a hint of one technique to solve.
+
+// FundamentalsStringsArrays
+
+// const popShift = str => {
+//   strToArr = [...str]
+//   resultArr = []
+//   return strToArr
+// }
+// console.log(popShift("exampletesthere"))
+
+//////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+// Apparently "Put A Pillow On Your Fridge Day is celebrated on the 29th of May each year, in Europe and the U.S. The day is all about prosperity, good fortune, and having bit of fun along the way."
+
+// All seems very weird to me.
+
+// Nevertheless, you will be given an array of two strings (s). First find out if the first string contains a fridge... (i've deemed this as being 'n', as it looks like it could hold something).
+
+// Then check that the second string has a pillow - deemed 'B' (struggled to get the obvious pillow-esque character).
+
+// If the pillow is on top of the fridge - it must be May 29th! Or a weird house... Return true; For clarity, on top means right on top, ie in the same index position.
+
+// If the pillow is anywhere else in the 'house', return false;
+
+
+// const isItPillowDay = (str1, str2) => {
+//   for (let i = 0; i < str1.length; i++) {
+//     if (i === 'n' && str2[str1[i]] === 'b') {
+//       return true
+//     } else if (i === 'b' && str2[str1[i]] === 'n') {
+//       return true
+//     }
+//   }
+//   return false
+// }
+// console.log(isItPillowDay('abby', 'andy'))
+
+
+
+// const factory = n => {
+//     return function (numbers) {
+//       return numbers.map(num => num * n)
+//     }
+// }
+// const multiplyByFive = factory(5)
+
+// console.log(multiplyByFive([1, 2, 3, 4, 5]))
+
+
+
+
+// Base person factory function
+// function person(firstName, lastName, age, gender, employed, occupation, married) {
+//   return {
+//     firstName: firstName,
+//     lastName: lastName,
+//     age: age,
+//     gender: gender,
+//     employed: employed,
+//     occupation: occupation,
+//     married: married,
+//     sayName: function () {
+//       return `${this.firstName} ${this.lastName}`;
+//     },
+//     introduce: function () {
+//       return `Hello, my name is ${this.sayName()}. I am ${this.age} years old. I am a ${this.gender}.`;
+//     }
+//   };
+// }
+
+// // constructionWorker factory function
+// function constructionWorker(firstName, lastName, age, gender, married, boss) {
+//   // Inherit properties and methods from the person factory
+//   const worker = person(firstName, lastName, age, gender, true, "construction worker", married);
+
+//   // Add constructionWorker-specific property
+//   worker.boss = boss;     
+
+//   // Add constructionWorker-specific method
+//   worker.sayBossName = function () {
+//     return `My boss is called ${this.boss} and is a very nice person!`;
+//   };
+
+//   return worker;
+// }
+
+// // Example usage
+// const john = constructionWorker("John", "Doe", 30, "male", true, "Mr. Smith");
+
+// console.log(john);
+// // Output: Full construction worker object
+// // {
+// //   firstName: 'John',
+// //   lastName: 'Doe',
+// //   age: 30,
+// //   gender: 'male',
+// //   employed: true,
+// //   occupation: 'construction worker',
+// //   married: true,
+// //   boss: 'Mr. Smith',
+// //   sayName: [Function: sayName],
+// //   introduce: [Function: introduce],
+// //   sayBossName: [Function: sayBossName]
+// // }
+
+// console.log(john.sayName());
+// // Output: "John Doe"
+
+// console.log(john.introduce());
+// // Output: "Hello, my name is John Doe. I am 30 years old. I am a male."
+
+// console.log(john.sayBossName());
+// // Output: "My boss is called Mr. Smith and is a very nice person!"
+
+// // Another example
+// const jane = constructionWorker("Jane", "Smith", 25, "female", false, "Mrs. Johnson");
+
+// console.log(jane.sayName());
+// // Output: "Jane Smith"
+
+// console.log(jane.introduce());
+// // Output: "Hello, my name is Jane Smith. I am 25 years old. I am a female."
+
+// console.log(jane.sayBossName());
+// // Output: "My boss is called Mrs. Johnson and is a very nice person!"
+
+
+// Task
+// Given an array of integers, sum consecutive even numbers and consecutive odd numbers. Repeat the process while it can be done and return the length of the final array.
+
+// Example
+// For arr = [2, 1, 2, 2, 6, 5, 0, 2, 0, 5, 5, 7, 7, 4, 3, 3, 9]
+
+// The result should be 6.
+
+// [2, 1, 2, 2, 6, 5, 0, 2, 0, 5, 5, 7, 7, 4, 3, 3, 9]  -->
+//          2+2+6       0+2+0     5+5+7+7       3+3+9
+// [2, 1,   10,    5,    2,        24,     4,   15   ] -->
+//                                2+24+4
+// [2, 1,   10,    5,             30,           15   ]
+// The length of final array is 6
+
+// const addConsecutiveEvens = arr => {
+//   const result = []
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i < arr.length - 1 && arr[i] % 2 === 0 && arr[i + 1] % 2 === 0) {
+//        result.push(arr[i] + arr[i + 1])
+//        i++
+//     } else {
+//       result.push(arr[i])
+//     }
+//   }
+//   return result
+// }
+
+// console.log(addConsecutiveEvens([2, 1, 2, 2, 6, 5, 0, 2, 0, 5, 5, 7, 7, 4, 3, 3, 9]))
+
+// const addConsecutiveEvens = (arr) => {
+  
+//   let changed = true
+
+//   while (changed) {
+//     const result = [];
+//     changed = false
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i < arr.length - 1 && arr[i] % 2 === arr[i + 1] % 2) {
+//       result.push(arr[i] + arr[i + 1]);
+//       i++; 
+//       changed = true
+//     } else {
+//       result.push(arr[i]);
+//     }
+//    }
+//    arr = result
+//   }
+//    return arr.length; // Return the length of the final array
+// };
+
+
+// const addConsecutiveEvens = arr => arr.reduce((a, b))
+
+
+
+// function sumGroups(arr) {
+//   let changed = true
+//   while (changed) {
+//     const result = []
+//     changed = false
+    
+//     for (let i = 0; i < arr.length; i++) {
+//       if (i < arr.length - 1 && arr[i] % 2 === arr[i + 1] % 2) {
+//         result.push(arr[i] + arr[i + 1])
+//         i++
+//         changed = true
+//       } else {
+//         result.push(arr[i])
+//       } 
+//     }
+//     arr = result
+//   }
+//     return arr.length
+//   }
+
+
+// console.log(sumGroups([2, 1, 2, 2, 6, 5, 0, 2, 0, 5, 5, 7, 7, 4, 3, 3, 9]));
+// console.log(sumGroups([705,298,833,279,272,852,886,194,207,767,782]))
