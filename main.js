@@ -1377,3 +1377,29 @@ const candles = [3, 2, 1, 3, 4, 4, 4];
 
 // console.log(sumGroups([2, 1, 2, 2, 6, 5, 0, 2, 0, 5, 5, 7, 7, 4, 3, 3, 9]));
 // console.log(sumGroups([705,298,833,279,272,852,886,194,207,767,782]))
+
+// pairs([1,2,5,8,-4,-3,7,6,5]) = 3
+// The pairs are selected as follows [(1,2),(5,8),(-4,-3),(7,6),5]
+// --the first pair is (1,2) and the numbers in the pair are consecutive; Count = 1
+// --the second pair is (5,8) and are not consecutive
+// --the third pair is (-4,-3), consecutive. Count = 2
+// --the fourth pair is (7,6), also consecutive. Count = 3. 
+// --the last digit has no pair, so we ignore.
+
+// const pairs = arr => {
+//   return [...arr] 
+//   }
+// console.log(pairs([1,2,5,8,-4,-3,7,6,5]))
+
+// function pairs(array) {
+//   let count = 0;
+//   for (let i = 0; i < array.length - 1; i += 2) {
+//     if (Math.abs(array[i] - array[i + 1]) === 1) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// // Example usage:
+// console.log(pairs([1, 2, 5, 8, -4, -3, 7, 6, 5])); // Output: 3
