@@ -1403,3 +1403,186 @@ const candles = [3, 2, 1, 3, 4, 4, 4];
 
 // // Example usage:
 // console.log(pairs([1, 2, 5, 8, -4, -3, 7, 6, 5])); // Output: 3
+
+
+
+
+
+
+// 238. Product of Array Except Self
+// Attempted
+// Medium
+// Topics
+// Companies
+// Hint
+// Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+
+// The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+
+// You must write an algorithm that runs in O(n) time and without using the division operation.
+
+ 
+
+// Example 1:
+
+// Input: nums = [1,2,3,4]
+// Output: [24,12,8,6]
+// Example 2:
+
+// Input: nums = [-1,1,0,-3,3]
+// Output: [0,0,9,0,0]
+//  console.log('Hello World')
+
+
+//  const productExceptSelf = arr => {
+//   const result = []
+//   for (let i=0; i < arr.length; i++) {
+//   const cleanArr = arr.filter((_, index) => index !== i)
+//   const reducedArr = cleanArr.reduce((acc, curr) => acc * curr)
+//   result.push(Math.abs(reducedArr))
+// }
+//   return result
+// } 
+// console.log(productExceptSelf([-1,1,0,-3,3]))
+// console.log(productExceptSelf([1,2,3,4]))
+
+
+// const productExceptSelf = nums => {
+
+// let result = Array(nums.length).fill(1), left = 1, right = 1;
+//   nums.forEach((num, i) => (result[i] *= left, left *= num));
+//   nums.reverse().forEach((num, i) => (result[nums.length - 1 - i] *= right, right *= num));
+//   return result;
+// }
+// console.log(productExceptSelf([-1,1,0,-3,3]))
+// console.log(productExceptSelf([1,2,3,4]))
+
+
+
+
+
+
+
+// 334. Increasing Triplet Subsequence
+// Medium
+// Topics
+// Companies
+// Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
+
+ 
+
+// Example 1:
+
+// Input: nums = [1,2,3,4,5]
+// Output: true
+// Explanation: Any triplet where i < j < k is valid.
+// Example 2:
+
+// Input: nums = [5,4,3,2,1]
+// Output: false
+// Explanation: No triplet exists.
+// Example 3:
+
+// Input: nums = [2,1,5,0,4,6]
+// Output: true
+// Explanation: The triplet (3, 4, 5) is valid because nums[3] == 0 < nums[4] == 4 < nums[5] == 6.
+
+
+// const increasingTriplet = arr => {
+//   let numsInRow = 0
+//   for (let i = 0; i < arr.length; i++) {
+//       if (arr[i] < arr[i+1]) {
+//         numsInRow++
+//       }
+//   }
+//   return numsInRow >= 3
+// }
+// console.log(increasingTriplet([2,1,5,0,4,6]))
+// console.log(increasingTriplet([5,4,3,2,1]))
+
+
+
+
+// 443. String Compression
+// Medium
+// Topics
+// Companies
+// Hint
+// Given an array of characters chars, compress it using the following algorithm:
+
+// Begin with an empty string s. For each group of consecutive repeating characters in chars:
+
+// If the group's length is 1, append the character to s.
+// Otherwise, append the character followed by the group's length.
+// The compressed string s should not be returned separately, but instead, be stored in the input character array chars. Note that group lengths that are 10 or longer will be split into multiple characters in chars.
+
+// After you are done modifying the input array, return the new length of the array.
+
+// You must write an algorithm that uses only constant extra space.
+ 
+ 
+
+// Example 1:
+
+// Input: chars = ["a","a","b","b","c","c","c"]
+// Output: Return 6, and the first 6 characters of the input array should be: ["a","2","b","2","c","3"]
+// Explanation: The groups are "aa", "bb", and "ccc". This compresses to "a2b2c3".
+// Example 2:
+
+// Input: chars = ["a"]
+// Output: Return 1, and the first character of the input array should be: ["a"]
+// Explanation: The only group is "a", which remains uncompressed since it's a single character.
+// Example 3:
+
+// Input: chars = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
+// Output: Return 4, and the first 4 characters of the input array should be: ["a","b","1","2"].
+// Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
+
+
+
+
+
+
+
+
+// Task
+// Yesterday you found some shoes in your room. Each shoe is described by two values:
+
+// type indicates if it's a left or a right shoe;
+// size is the size of the shoe.
+// Your task is to check whether it is possible to pair the shoes you found in such a way that each pair consists of a right and a left shoe of an equal size.
+
+// Example
+// For:
+
+// shoes = [[0, 21], 
+//          [1, 23], 
+//          [1, 21], 
+//          [0, 23]]
+// the output should be true;
+
+// For:
+
+// shoes = [[0, 21], 
+//          [1, 23], 
+//          [1, 21], 
+//          [1, 23]]
+// the output should be false.
+
+// Input/Output
+// [input] 2D integer array shoes
+// Array of shoes. Each shoe is given in the format [type, size], where type is either 0 or 1 for left and right respectively, and size is a positive integer.
+
+// Constraints: 2 ≤ shoes.length ≤ 50,  1 ≤ shoes[i][1] ≤ 100.
+
+// [output] a boolean value
+
+// true if it is possible to pair the shoes, false otherwise.
+
+// const doTheyMakePairs = arr => {}
+
+
+  var compress = function(chars) {
+    
+    
+  }; 
