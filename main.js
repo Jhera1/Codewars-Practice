@@ -1583,6 +1583,25 @@ const candles = [3, 2, 1, 3, 4, 4, 4];
 
 
   var compress = function(chars) {
-    
-    
-  }; 
+    let write = 0, i = 0;
+
+    while (i < chars.length) {
+        let char = chars[i], count = 0;
+
+        // Count occurrences of the current character
+        while (i < chars.length && chars[i] === char) {
+            count++;
+            i++;
+        }
+
+        chars[write++] = char; // Write the character
+
+        // Write the count if greater than 1
+        if (count > 1) {
+            for (let c of String(count)) chars[write++] = c;
+        }
+    }
+
+    return write;
+};
+console.log(compress(["a","b","b","b","b","b","b","b","b","b","b","b","b"]))
